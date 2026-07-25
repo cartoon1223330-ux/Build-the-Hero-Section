@@ -3,44 +3,105 @@
     padding:0;
     box-sizing:border-box;
     font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f5fbff;
+    background:#f4f9ff;
+    color:#333;
 }
 
-.hero{
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    z-index:1000;
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:60px 8%;
-    min-height:100vh;
-    gap:40px;
+    padding:18px 0;
 }
 
-.hero-content{
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#0077b6;
+}
+
+.logo i{
+    margin-right:8px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin:0 15px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#0077b6;
+}
+
+.btn{
+    text-decoration:none;
+    background:#0077b6;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:8px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    margin:auto;
+    padding-top:100px;
+    gap:50px;
+}
+
+.hero-text{
     flex:1;
 }
 
-.hero-content h1{
-    font-size:48px;
-    color:#0b4f6c;
+.hero-text h1{
+    font-size:55px;
+    color:#023e8a;
     margin-bottom:20px;
 }
 
-.hero-content p{
+.hero-text p{
     font-size:18px;
-    color:#555;
     line-height:1.8;
     margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:15px;
+    gap:20px;
 }
 
-.btn{
+.primary-btn,
+.secondary-btn{
     text-decoration:none;
     padding:14px 28px;
     border-radius:8px;
@@ -48,21 +109,21 @@ body{
     font-weight:bold;
 }
 
-.primary{
+.primary-btn{
     background:#0077b6;
-    color:#fff;
+    color:white;
 }
 
-.primary:hover{
+.primary-btn:hover{
     background:#005f8f;
 }
 
-.secondary{
+.secondary-btn{
     border:2px solid #0077b6;
     color:#0077b6;
 }
 
-.secondary:hover{
+.secondary-btn:hover{
     background:#0077b6;
     color:#fff;
 }
@@ -76,16 +137,113 @@ body{
     width:100%;
     max-width:500px;
     border-radius:20px;
-    animation:float 3s ease-in-out infinite;
+    animation:float 3s infinite ease-in-out;
 }
 
 @keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:38px;
+    color:#023e8a;
+    margin-bottom:40px;
+}
+
+.about p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+.service-box,
+.doctor-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card,
+.doctor-card{
+    background:#fff;
+    border-radius:15px;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover,
+.doctor-card:hover{
+    transform:translateY(-10px);
+}
+
+.card i{
+    font-size:45px;
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+.doctor-card img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.contact textarea{
+    height:150px;
+    resize:none;
+}
+
+.contact button{
+    width:100%;
+    background:#0077b6;
+    color:#fff;
+    border:none;
+    padding:15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.contact button:hover{
+    background:#005f8f;
+}
+
+footer{
+    background:#023e8a;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
 }
 
 @media(max-width:768px){
@@ -95,16 +253,25 @@ body{
     text-align:center;
 }
 
+.hero-text h1{
+    font-size:38px;
+}
+
+.nav-links{
+    display:none;
+}
+
+.menu-btn{
+    display:block;
+}
+
 .hero-buttons{
     justify-content:center;
     flex-wrap:wrap;
 }
 
-.hero-content h1{
-    font-size:36px;
+.btn{
+    display:none;
 }
 
-.hero-content p{
-    font-size:16px;
-}
-}
+    }
